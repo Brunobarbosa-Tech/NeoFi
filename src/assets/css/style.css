@@ -10,22 +10,6 @@
     background: var(--color-Black);
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    cursor: pointer;
-}
-
-.menu-toggle>span {
-    width: 30px;
-    height: 3px;
-    background-color: var(--color-White);
-    border-radius: 2px;
-}
-
 .menu nav {
     display: flex;
     gap: 40px;
@@ -77,6 +61,22 @@ a:hover {
     color: var(--color-White);
     background: var(--color-Gray1);
     transform: translateX(-20px);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-toggle>span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--color-White);
+    border-radius: 2px;
 }
 
 /* -------- MAIN --------- */
@@ -623,200 +623,149 @@ input {
 
 /* ------- Fimm Footer --------- */
 
-/* ----------- Tablets e desktops médios (max-width: 1024px) ----------- */
+/* Breakpoint */
+
+/* ------- Tablets (1024px) -------- */
 
 @media (max-width: 1024px) {
-  /* Menu */
-  .menu-toggle {
-    display: flex; /* Mostrar menu hamburguer */
-  }
-  .menu-content nav {
-    display: none; /* Esconder menu horizontal */
-    flex-direction: column;
-    gap: 10px;
-    background-color: var(--color-Black);
-    padding: 15px;
-  }
-  .menu-content nav.active {
-    display: flex; /* Menu vertical ao clicar */
-  }
-  .btns-menu {
-    display: none; /* Esconder botões em telas menores */
-  }
-  .menu-content {
-    display: flex;
-    gap: 20px;
-  }
+     .menu-toggle {
+        display: flex;
+     }
 
-  /* Conteúdo principal */
-  .content-main {
-    flex-direction: column;
-    text-align: center;
-    gap: 45px;
-    padding: 40px 20px;
-  }
+      .menu-content nav {
+        display: none; /* Esconde o menu até que o toggle seja clicado */
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--color-Black);
+        padding: 15px;
+    }
 
-  /* Cards e grupos */
-  .content-future,
-  .cards-future {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
+    .menu-content nav.active {
+        display: flex; /* Mostra o menu quando toggle é ativado via JS */
+    }
 
-  .content-connectivity {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 90%;
-  }
+    .btns-menu {
+        display: none; /* Você pode ocultar os botões ou reposicioná-los */
+    }
 
-  /* Footer */
-  .neofi-footer {
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px 10px;
-    justify-content: center;
-  }
+    .menu-content {
+        display: flex;
+        gap: 20px;
+    }
+
+    .content-main {
+        flex-direction: column;
+        gap: 45px;
+        text-align: center;
+    }
+
+    .content-future {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards-future {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content-connectivity {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .neofi-footer {
+        gap: 15px;
+        padding: 8px 8px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
 }
 
-/* ----------- Tablets e celulares médios (max-width: 768px) ----------- */
+/* ------- Celulares Médio (768px) -------- */
 
 @media (max-width: 768px) {
-  h1 {
-    font-size: 40px;
-  }
+    h1 {
+        font-size: 40px;
+    }
 
-  p {
-    font-size: 14px;
-    text-align: center;
-  }
+    p {
+        font-size: 14px;
+    }
 
-  .menu-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 10px 15px;
-  }
+    .menu nav {
+        flex-direction: column;
+        gap: 18px;
+    }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-  }
+    .content-main,
+    .statistics,
+    .title-footer {
+        padding: 20px;
+    }
 
-  .content-main,
-  .statistics,
-  .title-footer {
-    padding: 20px;
-    text-align: center;
-  }
+    .cards-future,
+    .grup-img,
+    .group-btn {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-  .cards-future,
-  .grup-img,
-  .group-btn {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-  }
+    .content-connectivity {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        margin: 20px;
+    }
 
-  .content-connectivity {
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 100%;
-    box-sizing: border-box;
-    align-items: center;
-  }
+    .neofi-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-  .neofi-footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .cards-footer {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
-  .cards-footer {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .form-footer {
-    width: 100%;
-    padding: 10px;
-  }
+    .form-footer {
+        width: 100%;
+        padding: 10px;
+    }
 }
 
-/* ----------- Celulares pequenos (max-width: 480px) ----------- */
+/* ------- Celulares Pequenos (480px) -------- */
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 32px;
-    text-align: center;
-  }
+    .cards {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
 
-  p {
-    font-size: 14px;
-    text-align: center;
-  }
+    .menu-content {
+        padding: 10px;
+    }
 
-  .menu-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-  }
+    .content-faq,
+    .content-statistics {
+        padding: 20px;
+        flex-direction: column;
+    }
 
-  .menu nav {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-  }
+    .title-footer, p {
+        font-size: 14px;
+        text-align: center;
+        flex-direction: column;
+    }
 
-  .content-main {
-    flex-direction: column;
-    padding: 10px;
-  }
+    .form-title {
+        width: 100%;
+    }
 
-  .cards {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .content-faq,
-  .content-statistics {
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  .title-footer {
-    margin: 20px;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .form-title {
-    width: 100%;
-  }
-
-  .cards-footer {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .form-footer {
-    width: 100%;
-    padding: 10px;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+    .title-footer {
+        margin: 20px;
+    }
 }
